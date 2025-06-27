@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+   
+ 
+    body,
+    html {
+        padding: 0;
+        margin: 0;
+        background-color: transparent;
+        width: 21cm;
+        height: 29.7cm;
+        position: relative;
+    }
+
+    .bg {
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .buttons{
+        position: absolute;
+        top: 1cm;
+        left: 1cm;
+        z-index: 2;
+    }
+    .image {
+        position: absolute;
+        left: 0.39cm;
+        top: 8.975cm;
+        height: 16.2cm;
+        width: 12cm;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image img {
+        height: 100%;
+        width: auto;
+        max-width: 100%;
+    }
+    @media print{
+        @page {
+        size: auto;
+        margin: 0mm;
+    }
+        .buttons{
+            display: none!important;
+        }
+    }
+</style>
+
+<body>
+    <div class="buttons">
+        <label style="cursor: pointer; padding: 5px 10px; background-color: #000000; color: #ffff;" for="input">Add photo</label>
+        <input id="input" style="display: none;" type="file" name='file' onchange="readUrl(event)">
+    </div>
+    <img class="bg" src="./буковель з фоном.png">
+    <div class="image">
+        <img id="image" src="" alt="">
+    </div>
+
+    <script>
+        function readUrl(event) {
+            if (event.target.files && event.target.files[0]) {
+                let reader = new FileReader();
+
+                reader.onload = (event) => {
+                    document.getElementById('image').src = event.target.result;
+                };
+
+                reader.readAsDataURL(event.target.files[0]);
+            };
+        }
+    </script>
+</body>
+
+</html>

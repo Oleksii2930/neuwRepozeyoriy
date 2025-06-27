@@ -1,0 +1,187 @@
+body {
+    margin: 0;
+    font-family: "Raleway", sans-serif;
+}
+ul {
+    margin: 0;
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.header {
+    height: calc(100vh - 40px);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-image: url(img/beckgraund_img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    background-attachment: fixed;
+}
+.header::after {
+    content: "";  
+    background: #0c3632;
+    position: absolute;
+    opacity: .85;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: all .25s ease;
+}
+.nav {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    line-height: 50px;
+    justify-content: space-between;
+    width: calc(100% - 40px);
+}
+.logo-container {
+    line-height: 1.5;
+}
+
+.nav-list li {
+   display: inline-block; 
+   padding: 0 10px;
+   color:white ;
+   font-weight: 600;
+   font-size: 14px;
+}
+.nav-list-link {
+position: relative;
+transition: all .25s ease;
+}
+.nav-list-link::after {
+content:"" ;
+background: #17baaa;
+height: 2px;
+width: 100%;
+position: absolute;
+bottom: -8px;
+left: 0;
+transform: scaleX(0); 
+transition: all .25s ease;
+}
+.nav-list-link:hover::after {
+     transform: scaleX(1);
+}
+.nav-list-link:hover {
+    color:  #17baaa;
+}
+.nav-list-link :last-of-type {
+    padding: 0;
+    line-height: 50px;
+
+}
+
+ .nav-list li:last-of-type a { 
+display: flex;
+align-items: center;
+height: 25px;
+font-style: 30px;
+background-color: red;
+padding: 0 10px;
+border-radius: 3px;
+font-size: 12px;
+font-weight: bold;
+transition: all .25s ease;
+margin: 12px 0; 
+}
+.heart-icon {
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.nav-list li:last-of-type a:hover {
+    background-color: rgb(126, 17, 41);
+  
+}
+
+.logo-png {
+    height: 40px;
+}
+.zagolovoc {
+    margin: auto 0;
+    position: relative;
+    z-index: 1;
+   
+}
+.header-content-title{
+font-size: 56px;
+color: white;
+line-height: 84px;
+}
+.header-content-title-green {
+color: #17baaa;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+  }
+  
+  .burger-menu {
+    display: none;
+  }
+  .zagolovoc-btn {
+    display: block;
+    background: #17baaa;
+    color: #fff;
+    font-size: .875rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+    border: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    max-width: 100%;
+    min-height: 40px;
+    transition: all .25s ease;
+  }
+  .zagolovoc-btn:hover {
+    background-color: #129185;
+  }
+.animal_logo {
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+z-index: 1; 
+width: 100%;
+padding: 40px 0;
+}
+.logo-container {
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    max-width: 1280px;
+    width: 100%;
+    text-align: right;
+}
+  @media (max-width: 992px) {
+    .nav-list {
+      display: none;
+    }
+  
+    .burger-menu {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+  
+    .burger-menu span {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      margin: 4px 0;
+      transition: 0.4s;
+    } }
